@@ -21,16 +21,19 @@ Route::get('about', function () {
     return view('about');
 });
 
-Route::get('tasks', function () {
-    // $tasks = DB::table('tasks')->get();
+Route::get('/tasks', 'TasksController@index');
+Route::get('/tasks/{task}','TasksController@show');
 
-    $tasks = Task::all();
-    return view('tasks.index', compact('tasks'));
-});
+// Route::get('tasks', function () {
+//     // $tasks = DB::table('tasks')->get();
 
-Route::get('/tasks/{task}', function ($id) {
+//     $tasks = Task::all();
+//     return view('tasks.index', compact('tasks'));
+// });
+
+// Route::get('/tasks/{task}', function ($id) {
     // $task = DB::table('tasks')->find($id);
 
-    $task = Task::find($id);
-    return view('tasks.show', compact('task'));
-});
+    // $task = Task::find($id);
+    // return view('tasks.show', compact('task'));
+// });
